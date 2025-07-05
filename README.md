@@ -11,7 +11,7 @@ A web-based career guidance system to help users discover suitable career paths 
 ## 📦 Setup Instructions
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/career-counselling-assistant.git
+git clone https://github.com/smadakhir/Web-Project-Career-Counselling-Assistant.git
 ```
 
 2. Create `.env` file based on `.env.example` and set database credentials.
