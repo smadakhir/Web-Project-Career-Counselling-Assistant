@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      margin: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px 20px;
+      background: white;
+      margin-top: 50px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    h2 {
+      text-align: center;
+      color: #007bff;
+    }
+    .question {
+      margin: 25px 0;
+      display: none;
+    }
+    .question.active {
+      display: block;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+    }
+    .btn {
+      background: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Career Counselling Quiz</h2>
+    <form id="quizForm" action="../src/quiz_process.php" method="post">
+      <div class="question active" id="q1">
+        <p><strong>1. Do you enjoy solving complex problems?</strong></p>
+        <label><input type="radio" name="q1" value="yes" required> Yes</label>
+        <label><input type="radio" name="q1" value="no"> No</label>
+        <button type="button" class="btn" onclick="nextQuestion(1)">Next</button>
+      </div>
+
+      <div class="question" id="q2">
+        <p><strong>2. Do you prefer working with people or data?</strong></p>
+        <label><input type="radio" name="q2" value="people" required> People</label>
+        <label><input type="radio" name="q2" value="data"> Data</label>
+        <button type="button" class="btn" onclick="nextQuestion(2)">Next</button>
+      </div>
+
+      <div class="question" id="q3">
+        <p><strong>3. Do you enjoy creative tasks?</strong></p>
+        <label><input type="radio" name="q3" value="yes" required> Yes</label>
+        <label><input type="radio" name="q3" value="no"> No</label>
+        <button type="submit" class="btn">Submit Quiz</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function nextQuestion(current) {
+      document.getElementById("q" + current).classList.remove("active");
+      document.getElementById("q" + (current + 1)).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
